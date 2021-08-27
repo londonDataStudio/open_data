@@ -23,7 +23,8 @@ unzip("temp.zip", exdir = "temp_data")
 #------------- Read In Data Filter for Westminster --------------#
 
 oa <- read_sf("temp_data/statistical-gis-boundaries-london/ESRI/OA_2011_London_gen_MHW.shp") %>%
-  dplyr::filter(LAD11NM == "Westminster")
+  dplyr::filter(LAD11NM == "Westminster") %>%
+  st_transform(4326)
 
 lsoa <- read_sf("temp_data/statistical-gis-boundaries-london/ESRI/LSOA_2011_London_gen_MHW.shp") %>%
   dplyr::filter(LAD11NM == "Westminster")
