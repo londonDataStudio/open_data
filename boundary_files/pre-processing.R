@@ -6,8 +6,11 @@
 # URL: https://data.london.gov.uk/dataset/statistical-gis-boundary-files-london
 
 # Output files
-# - lsoa.geojson
-# - msoa.geojson
+# - oa_westminster.geojson
+# - lsoa_westminster.geojson
+# - msoa_westminster.geojson
+# - wards_westminster.geojson
+# - boundary_westminster.geojson
 
 #------------ Load Libraries -------------#
 
@@ -44,6 +47,10 @@ westminster <- read_sf(file.path(path,"London_Borough_Excluding_MHW.shp")) %>%
   dplyr::filter(NAME =="Westminster") %>%
   st_transform(4326)
 
+london_boroughs <- read_sf(file.path(path,"London_Borough_Excluding_MHW.shp")) %>%
+  st_transform(4326)
+  
+
 
 #------------ Save filtered Data  ------------#
 
@@ -52,6 +59,7 @@ lsoa %>% st_write("lsoa_westminster.geojson", delete_dsn=T)
 msoa %>% st_write("msoa_westminster.geojson", delete_dsn=T)
 wards %>% st_write("wards_westminster.geojson", delete_dsn=T)
 westminster %>% st_write("boundary_westminster.geojson", delete_dsn=T)
+london_boroughs %>% st_write("boroughs_london.geojson", delete_dsn=T)
 
 #------------ Remove downloaded data ------------#
 
