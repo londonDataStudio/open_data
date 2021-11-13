@@ -1,0 +1,41 @@
+.axis {
+  font-family: "Source Sans Pro";
+  font-size: 13px;
+  color: lightgrey;
+}
+
+.axis .tick text{
+  color:grey;
+}
+
+.axis .tick line{
+  stroke:none;
+}
+
+.grid .tick{
+  color:#E8E8E8;
+}
+
+
+.axis.y path {
+  stroke:none;
+}
+
+.grid path {
+  stroke:none;
+}
+
+.title {
+  font-family: "Source Sans Pro";
+  font-size: 18px;
+  fill: #5F5F5F;
+}
+
+.subtitle {
+  font-size: 14px;
+}
+
+.source {
+  font-size: 12px;
+  fill: lightgrey;
+}
